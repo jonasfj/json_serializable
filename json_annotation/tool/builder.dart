@@ -7,7 +7,7 @@ import 'package:source_gen/source_gen.dart';
 
 Builder docThingy([_]) => _DocThingy();
 
-final _ref = RegExp(r'\[(\w+)\]');
+final _ref = RegExp('\\[([^\\]]+)\\]');
 
 class _FieldThing {
   final FieldElement field;
@@ -67,14 +67,10 @@ class _DocThingy extends Builder {
 
       var owner = fe.enclosingElement;
 
-      var params = owner.constructors
+      var param = owner.constructors
           .singleWhere((c) => c.name.isEmpty)
           .parameters
-          .toList();
-
-      print([owner.name, params, fe.name]);
-
-      var param = params.singleWhere((pe) => pe.name == fe.name);
+          .singleWhere((pe) => pe.name == fe.name);
       log.warning([
         owner,
         param,

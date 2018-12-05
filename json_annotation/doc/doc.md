@@ -2,7 +2,7 @@
 
 | Field | JsonSerializable | JsonKey | Description |
 | --- | :---: | :---: | --- |
-| `anyMap` | ✓ |  | If `true`, `Map` types are *not* assumed to be [Map<String, dynamic>] – which is the default type of `Map` instances return by JSON decode in `dart:convert`. |
+| `anyMap` | ✓ |  | If `true`, `Map` types are *not* assumed to be `Map<String, dynamic>` – which is the default type of `Map` instances return by JSON decode in `dart:convert`. |
 | `checked` | ✓ |  | If `true`, generated `fromJson` functions include extra checks to validate proper deserialization of types. |
 | `createFactory` | ✓ |  | If `true` (the default), a private, static `_$ExampleFromJson` method is created in the generated part file. |
 | `createToJson` | ✓ |  | If `true` (the default), code for decoding JSON is generated fon this class. |
